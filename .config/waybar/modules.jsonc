@@ -1,0 +1,250 @@
+// __  __           _       _            
+//|  \/  | ___   __| |_   _| | ___  ___  
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __| 
+// | |  | | (_) | (_| | |_| | |  __/\__ \ 
+// |_|  |_|\___/ \__,_|\__,_|_|\___||___/ 
+//                                        
+
+
+{
+
+     "hyprland/workspaces": {
+        "format": "<sub>{icon}\n{windows}",
+        "format-icons": {
+	    "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "10": ""
+        },
+        "on-click": "activate",
+        "sort-by-number": true,
+        "active-only": false,
+	"on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
+    "all-outputs": false
+    },
+
+
+
+
+// Taskbar
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+           "Alacritty"
+        ],
+        "app_ids-mapping": {
+            "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal"
+        }
+    },
+
+    // Hyprland Window
+    "hyprland/window": {
+        "rewrite": {
+            "(.*) - Firefox": "$1",
+	    "(sudo nvim /home/aguacate/.config/[^/]+)$": "Editando: $1",
+	    "(.*)/([^/]+)$": "$2",
+	    "(.*) - Mozilla Firefox": "🌎 $1",
+	    " - Mozilla Firefox": ""
+        },
+        "separate-outputs": true,
+	"max-length": 20, 
+        "tooltip": true
+    },
+
+
+
+
+    "custom/filemanager": {
+        "format": "  ",
+        "on-click": "dolphin",
+        "tooltip": false
+    },
+
+    "custom/firefox":{
+	    "format":"",
+	    "color": "#FFFFFF",
+	    "on-click": "firefox",
+	    "tooltip": false
+    },
+
+    "custom/appmenu": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    },    
+   
+
+"clock": {
+    "format": "<span font='16' rise='-500'></span><span font='11' rise='2000'> {:%H:%M}</span>",
+    "format-alt": "<span font='16' rise='-500'></span><span font='11' rise='2000'> {:%d/%m}</span>",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "on-click": "gnome-calendar"
+   },
+
+
+
+    "custom/code": {
+        "format": "󰨞 ",
+	"on-click": "code"
+    },
+
+     "custom/wofi": {
+        "format": " ",
+	"on-click": "nwggrid"
+    },
+
+ "custom/hardware": {
+        "format": "  ",
+	"on-click": "kitty --title 'btop' -e btop"
+    },
+
+
+    "group/quicklinks": {
+	    "format": "{icon}",
+	    "display": "inline-block",
+	"orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+
+        "modules": [
+		"custom/wofi",
+		"custom/code",
+            "custom/firefox",
+           "custom/filemanager"
+	   
+	             ]
+    },
+
+
+ "group/weas": {
+	    "format": "{icon}",
+	    "display": "inline-block",
+	"orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+
+        "modules": [
+		"custom/wallpaper",
+		"custom/hardware/"
+	   
+	             ]
+    },
+
+
+
+    "group/network": {
+	    "format": "{icon}",
+	    "display": "inline-block",
+	"orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+
+        "modules": [
+		"network",
+		"bluetooth",
+        "baterry"
+	   
+	             ]
+    },
+
+
+
+ "custom/wallpaper": {
+        "format": "",
+	"on-click": "/home/andresx/.config/hypr/scripts/wallpaper.sh"
+ },
+
+
+"network": {
+        "format": "{ifname}",
+        "format-wifi": "󰤨  {signalStrength}%",
+        "format-ethernet": "󰈀  {ifname}",
+        "format-disconnected": "󰤮",
+        "tooltip-format": "󰈀 {ifname} via {gwaddri}",
+        "tooltip-format-wifi": "󰤨 {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "tooltip-format-ethernet": "󰈀 {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "nm-connection-editor"
+},
+
+
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}   {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄  {capacity}%",
+        "format-alt": "{icon}  {time}",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+
+
+    "pulseaudio": {
+        "format": "{icon}   {volume}%",
+        "format-bluetooth": "{volume}%  {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " ", " "]
+        },
+        "on-click": "pavucontrol-qt"
+
+    },
+
+    "bluetooth": {
+        "format": "  {status}   ",
+        "format-disabled": "  ",
+        "format-off": "  ",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "format-no-controller": "",
+	"format-connected": "{device_alias}",
+	"format-connected-battery": "{device_alias} {device_battery_percentage}%",
+	"tooltip-format": "{controller_address} {num_connections} connected",
+	"tooltip-format-enumerate-connected": "{device_alias}\\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\\t{device_address}\\t{device_battery_percentage}%"
+}
+	
+}
+
+
+
+
+
