@@ -6,9 +6,9 @@
 //                 |___/                   
 //  
 // God end's here
-{
+{ 
     // General Settings
-    "layer": "bottom",
+    "layer": "top",
     "margin-bottom": 0,
     "margin-left": 0,
     "margin-right": 0,    
@@ -17,30 +17,7 @@
     // Load Modules
     "include": [".config/waybar/modules.jsonc"],
 
-    // Modules Left
-    "modules-left": [
-     "custom/appmenu",
-     "group/quicklinks",
-     "hyprland/window",
-     "wlr/taskbar"
-    ],
-
-
-
-    // Modules Center
-      "modules-center": [
-      "hyprland/workspaces",
-      "clock"
-    ],
-
-    // Modules Right    
-    "modules-right": [
-    "custom/hardware",
-	"custom/wallpaper",
-	"pulseaudio",
-    "battery",
-    "bluetooth",
-    "network",
-    "tray" 
-    ]
+    "modules-left": [ "custom/appmenu","group/quicklinks","hyprland/window","wlr/taskbar"],
+    "modules-center": ["hyprland/workspaces", "clock"],
+    "modules-right": [ "custom/hardware","custom/wallpaper","pulseaudio","group/status","tray" ]
 }

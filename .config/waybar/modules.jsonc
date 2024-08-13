@@ -40,6 +40,7 @@
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
+	"tooltip": true,
         "ignore-list": [
            "Alacritty"
         ],
@@ -72,7 +73,7 @@
     "custom/filemanager": {
         "format": "  ",
         "on-click": "dolphin",
-        "tooltip": false
+        "tooltip": true
     },
 
     "custom/firefox":{
@@ -93,7 +94,7 @@
     "format": "<span font='16' rise='-500'></span><span font='11' rise='2000'> {:%H:%M}</span>",
     "format-alt": "<span font='16' rise='-500'></span><span font='11' rise='2000'> {:%d/%m}</span>",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "on-click": "gnome-calendar"
+    "on-click": "gnome-calendar"
    },
 
 
@@ -104,7 +105,7 @@
     },
 
      "custom/wofi": {
-        "format": " ",
+        "format": "",
 	"on-click": "nwggrid"
     },
 
@@ -113,63 +114,33 @@
 	"on-click": "kitty --title 'btop' -e btop"
     },
 
+//quicklinks
 
     "group/quicklinks": {
-	    "format": "{icon}",
-	    "display": "inline-block",
+        "format": "{icon}",
+        "display": "inline-block",
 	"orientation": "inherit",
         "drawer": {
-            "transition-duration": 300,
-            "children-class": "not-memory",
-            "transition-left-to-right": false
+        "transition-duration": 300,
+        "children-class": "not-memory",
+        "transition-left-to-right": true
         },        
 
         "modules": [
-		"custom/wofi",
-		"custom/code",
-            "custom/firefox",
-           "custom/filemanager"
-	   
-	             ]
-    },
+		"custom/wofi", "custom/code","custom/firefox", "custom/filemanager"
+	             ] },
 
+//status
 
- "group/weas": {
-	    "format": "{icon}",
-	    "display": "inline-block",
-	"orientation": "inherit",
+    "group/status": {
+	"orientation": "horizontal",
         "drawer": {
-            "transition-duration": 300,
-            "children-class": "not-memory",
-            "transition-left-to-right": false
+        "transition-duration": 300,
+        "children-class": "not-memory",
+        "transition-left-to-right": false
         },        
 
-        "modules": [
-		"custom/wallpaper",
-		"custom/hardware/"
-	   
-	             ]
-    },
-
-
-
-    "group/network": {
-	    "format": "{icon}",
-	    "display": "inline-block",
-	"orientation": "inherit",
-        "drawer": {
-            "transition-duration": 300,
-            "children-class": "not-memory",
-            "transition-left-to-right": false
-        },        
-
-        "modules": [
-		"network",
-		"bluetooth",
-        "baterry"
-	   
-	             ]
-    },
+        "modules": ["network", "bluetooth", "battery"] },
 
 
 
@@ -193,12 +164,8 @@
 },
 
 
-
     "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
+    "states": { "warning": 30, "critical": 15},
         "format": "{icon}   {capacity}%",
         "format-charging": "󰂄 {capacity}%",
         "format-plugged": "󰂄  {capacity}%",
@@ -219,7 +186,6 @@
             "hands-free": " ",
             "headset": " ",
             "phone": " ",
-
             "portable": " ",
             "car": " ",
             "default": [" ", " ", " "]
