@@ -135,8 +135,6 @@ tooltip label {
     color: @textcolor2;
 }
 
-
-
 #window {
     background: @backgroundlight;
     margin: 5px 15px 5px 0px;
@@ -153,9 +151,6 @@ window#waybar.empty #window {
 }
 
 
-
-
-
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
 }
@@ -163,7 +158,6 @@ window#waybar.empty #window {
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
 }
-
 
 
 #custom-filemanager, #custom-wofi, #custom-firefox, #custom-code  {
@@ -270,15 +264,9 @@ window#waybar.empty #window {
 
 
 
-#network.ethernet {
+#network.ethernet, #network.wifi  {
     color: @textcolor;
 }
-
-#network.wifi {
-    color: @textcolor;
-}
-
-
 
  #bluetooth, #bluetooth.on, #bluetooth.connected 
 {
@@ -291,7 +279,6 @@ window#waybar.empty #window {
     opacity: 0.8;
     border:3px solid #F5F5DC
 }
-
 
 
 #bluetooth.off {
@@ -333,7 +320,6 @@ window#waybar.empty #window {
 }
 
 
-
 #tray {
     margin:0px 7px 0px 0px;
 }
@@ -347,9 +333,6 @@ window#waybar.empty #window {
     background-color: #eb4d4b;
 }
 
-/* -----------------------------------------------------
- * Other
- * ----------------------------------------------------- */
 
 label:focus {
     background-color: #000000;
@@ -359,12 +342,4 @@ label:focus {
     background-color: #90b1b1;
 }
 
-
-
-
-#custom-cliphist  {
-   background-color: @color11;
-    font-size: 14px;
-    color: #FFFFFF;
-}
 
