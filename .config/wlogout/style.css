@@ -1,0 +1,87 @@
+window {
+    font-family: CaskaydiaCove Nerd Font, monospace;
+    font-size: 10pt;
+    color: #cdd6f4; 
+    background-color: rgba(17, 17, 27, .88);
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    border: none;
+    color: #ced7f4;
+    text-shadow: none;
+    border-radius: 20px 20px 20px 20px;
+    background-color: rgba(30, 30, 46, 0);
+    margin: 5px;
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(49, 50, 68, 0.1);
+}
+
+#lock {
+    background-image: image(url("/home/andresx/.config/wlogout/icons/lock-hover.png"));
+    background-size: 50%;
+}
+#lock:focus {
+    background-image: image(url("/home/andresx/.config/wlogout/icons/lock.png"));
+    background-size: 50%;
+    
+}
+
+#logout {
+    background-image: image(url("/home/andresx/.config/wlogout/icons/logout.png"));
+    background-size: 50%;
+    
+}
+#logout:focus {
+    background-image: image(url("/home/andresx/.config/wlogout/icons/logout1.png"));
+    background-size: 50%;
+    
+}
+
+#suspend {
+    background-image: image(url("/home/andresx/.config/wlogout/icons/sleep.png"));
+    background-size: 50%;
+  
+} 
+#suspend:focus {
+    background-image: image(url("/home/andresx/.config/wlogout/icons/sleep-hover.png"));
+    background-size: 50%;
+    
+}
+
+#shutdown {
+    background-image: image(url("/home/andresx/.config/wlogout/icons/power.png"));
+    background-size: 50%;
+
+}
+#shutdown:focus {
+    background-image: image(url("/home/andresx/.config/wlogout/icons/power-hover.png"));
+}
+
+#reboot {
+    background-image: image(url("/home/andresx/.config/wlogout/icons/restart.png"));
+    background-size: 50%;
+
+}
+#reboot:focus {
+    background-image: image(url("/home/andresx/.config/wlogout/icons/restart-hover.png"));
+}
+
+
+
+#hibernate {
+    background-size: 50%;
+	
+	background-image: image(url("icons/hibernate.png"));
+}
+
+ #hibernate:focus {
+    background-size: 50%;
+	
+	background-image: image(url("icons/hibernate.png"));
+}
